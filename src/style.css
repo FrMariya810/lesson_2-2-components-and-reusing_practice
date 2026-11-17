@@ -15,3 +15,4 @@ form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 14px; align-item
 footer { padding: 26px 0; font-size: 14px; } .summary { font-size: 18px; }
 /* П6: временный внешний button и переменная на #sample добавляются ниже. */
 @media (max-width: 650px) { .columns, form { grid-template-columns: 1fr; } main { padding: 18px 12px; } }
+#sample { --booking-accent: #087f72; }

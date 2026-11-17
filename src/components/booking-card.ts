@@ -61,6 +61,9 @@ export class BookingCard extends HTMLElement {
 
     this.button.disabled = booking.status === 'confirmed'
     // П10: выведите «Индивидуально» или «Группа» в groupText.
+    this.groupText.textContent = booking.seats === 1
+      ? 'Индивидуально'
+      : 'Группа'
   }
 
   private onConfirm = () => {

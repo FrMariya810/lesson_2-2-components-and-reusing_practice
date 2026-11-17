@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+:root { font-family: system-ui, sans-serif; color: #213e35; background: #f2f5f1; }
+body { margin: 0; } main { max-width: 1080px; margin: auto; padding: 28px 20px; }
+h1 { font-size: clamp(28px, 4vw, 42px); margin: 10px 0; } h2 { font-size: 21px; } h3 { margin-top: 0; }
+.eyebrow { font-size: 12px; letter-spacing: .1em; } .panel { padding: 20px; background: white; border: 1px solid #cfdbd2; border-radius: 14px; margin: 22px 0; }
+button { font: inherit; color: white; background: #295d4b; border: 0; border-radius: 6px; padding: 9px 13px; cursor: pointer; }
+button:disabled { background: #dfe6e3; color: #52665e; cursor: default; }
+button:focus-visible, input:focus-visible { outline: 3px solid #aa6000; outline-offset: 3px; }
+label { display: grid; gap: 5px; } input { font: inherit; min-width: 0; width: 100%; padding: 9px; border: 1px solid #a5b9af; border-radius: 6px; }
+form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 14px; align-items: end; } #message { grid-column: 1 / -1; margin: 0; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; } .toolbar button { font-size: 14px; }
+#sample { max-width: 420px; margin: 16px 0; min-height: 16px; } output { display: block; padding: 10px; background: #edf2f8; line-height: 1.6; overflow-wrap: anywhere; }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; } .cards { display: grid; gap: 12px; }
+.legacy-card { padding: 16px; border: 1px dashed #9ab3a6; border-radius: 12px; background: white; overflow-wrap: anywhere; }
+footer { padding: 26px 0; font-size: 14px; } .summary { font-size: 18px; }
+/* П6: временный внешний button и переменная на #sample добавляются ниже. */
+@media (max-width: 650px) { .columns, form { grid-template-columns: 1fr; } main { padding: 18px 12px; } }

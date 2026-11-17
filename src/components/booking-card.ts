@@ -25,11 +25,15 @@ export class BookingCard extends HTMLElement {
     this.button.type = 'button'
     article.append(this.nameText, this.seatsText, this.statusText, this.groupText, this.button)
     // П3: создайте shadow root, добавьте style и article, вызовите render.
+    const root = this.attachShadow({ mode: 'open' })
+    root.append(style, article)
+    this.render()
   }
 
   set booking(value: Booking) {
     // П4: сохраните value и обновите отображение.
-    void value
+    this.current = value
+    this.render()
   }
 
   private render() {
@@ -44,7 +48,18 @@ export class BookingCard extends HTMLElement {
       return
     }
     // П4: выведите имя и число участников.
+    this.nameText.textContent = booking.name
+    this.seatsText.textContent = `Участников: ${booking.seats}`
     // П5: выведите статус, текст кнопки и её доступность.
+    this.statusText.textContent = booking.status === 'confirmed'
+      ? 'Подтверждена'
+      : 'Новая заявка'
+
+    this.button.textContent = booking.status === 'confirmed'
+      ? 'Подтверждено'
+      : 'Подтвердить'
+
+    this.button.disabled = booking.status === 'confirmed'
     // П10: выведите «Индивидуально» или «Группа» в groupText.
   }
 
@@ -63,3 +78,4 @@ export class BookingCard extends HTMLElement {
 }
 
 // П2: зарегистрируйте booking-card после объявления класса.
+customElements.define('booking-card', BookingCard)

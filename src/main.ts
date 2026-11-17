@@ -1,4 +1,5 @@
 import './style.css'
+import './components/booking-card'
 import type { Booking } from './models/booking'
 import { initialBookings } from './models/booking'
 import { legacyCard, updateLegacy } from './legacy-card'

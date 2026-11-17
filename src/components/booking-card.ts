@@ -79,6 +79,7 @@ export class BookingCard extends HTMLElement {
 
   disconnectedCallback() {
     // П8: снимите тот же обработчик.
+    this.button.removeEventListener('click', this.onConfirm)
   }
 }
 
